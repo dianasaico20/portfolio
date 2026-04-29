@@ -125,7 +125,7 @@ export default function ContactCTA() {
                 className="object-cover"
               />
               {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-background-primary/60 backdrop-blur-[2px]" />
+              <div className="absolute inset-0 bg-background-primary/60 backdrop-blur-sm" />
             </div>
 
             {/* Interactive Border Glow */}

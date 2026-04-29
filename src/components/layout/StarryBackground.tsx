@@ -22,7 +22,7 @@ export default function StarryBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden bg-background-primary">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-background-primary">
       <motion.div
         style={{ y }}
         className="absolute inset-0 w-full h-[120%]" // Extra height to account for parallax movement
@@ -41,7 +41,7 @@ export default function StarryBackground() {
           />
         ))}
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background-primary/50 to-background-primary pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-background-primary/50 to-background-primary pointer-events-none" />
     </div>
   );
 }

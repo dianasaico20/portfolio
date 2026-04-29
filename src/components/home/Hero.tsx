@@ -20,7 +20,7 @@ export default function Hero() {
           </span>
 
           {/* Main Headline */}
-          <h1 className="font-display text-6xl sm:text-7xl md:text-[6rem] font-bold leading-[1.05] text-text-primary tracking-tight mb-6">
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-[1.05] text-text-primary tracking-tight mb-6">
             Diseñadora<br />
             UX/UI & Web
           </h1>
@@ -42,10 +42,10 @@ export default function Hero() {
           </div>
 
           {/* Badge at the bottom */}
-          <div className="inline-flex items-center gap-3 border border-accent-primary/50 rounded-full px-6 py-2.5 text-xs font-display font-bold text-accent-primary uppercase tracking-[0.15em] bg-transparent backdrop-blur-sm">
-            <span className="text-accent-primary text-[10px]">✦</span>
+          <div className="inline-flex items-center gap-3 border border-accent-primary/50 rounded-full px-6 py-2.5 text-xs font-display font-bold text-accent-primary uppercase tracking-widest bg-transparent backdrop-blur-sm">
+            <span className="text-accent-primary text-xs scale-75 inline-block">✦</span>
             <span>DISPONIBLE PARA PROYECTOS FREELANCE</span>
-            <span className="text-accent-primary text-[10px]">✦</span>
+            <span className="text-accent-primary text-xs scale-75 inline-block">✦</span>
           </div>
         </motion.div>
 

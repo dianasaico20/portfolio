@@ -30,7 +30,7 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="py-24 relative z-10">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function Skills() {
                   </h3>
                   
                   {/* Subtle Divider */}
-                  <div className="w-[85%] h-[1px] bg-white/10 mb-8 transition-colors group-hover:bg-accent-primary/20" />
+                  <div className="w-5/6 h-px bg-white/10 mb-8 transition-colors group-hover:bg-accent-primary/20" />
                   
                   <ul className="space-y-4 flex-1">
                     {skill.items.map((item, itemIdx) => (

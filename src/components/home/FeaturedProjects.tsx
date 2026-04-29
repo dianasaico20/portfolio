@@ -69,7 +69,7 @@ export default function FeaturedProjects() {
 
   return (
     <section id="projects" className="py-24 relative z-10">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export default function FeaturedProjects() {
                 transition={{ duration: 0.4 }}
               >
                 <Card className="h-full flex flex-col group">
-                  <div className="relative h-[250px] md:h-[320px] w-full overflow-hidden">
+                  <div className="relative h-62.5 md:h-80 w-full overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}

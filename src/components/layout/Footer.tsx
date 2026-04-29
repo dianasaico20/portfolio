@@ -16,7 +16,7 @@ export default function Footer() {
     <footer className="relative border-t border-border-muted bg-background-primary pt-16 pb-8 overflow-hidden">
       {/* Decorative gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-accent-primary to-transparent opacity-50" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-accent-primary/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-accent-primary/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start gap-2">

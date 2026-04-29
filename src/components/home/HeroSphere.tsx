@@ -20,14 +20,14 @@ export default function HeroSphere() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <div className="w-[300px] h-[300px] md:w-[500px] md:h-[500px]" />;
+  if (!mounted) return <div className="w-75 h-75 md:w-125 md:h-125" />;
 
   return (
-    <div className="relative flex items-center justify-center w-[300px] h-[300px] md:w-[500px] md:h-[500px]" style={{ perspective: "1000px" }}>
+    <div className="relative flex items-center justify-center w-75 h-75 md:w-125 md:h-125" style={{ perspective: "1000px" }}>
       {/* Orbital Lines */}
-      <div className="absolute inset-0 m-auto w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full border border-dashed border-white/10" style={{ transform: "rotateX(60deg)" }} />
-      <div className="absolute inset-0 m-auto w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full border border-dashed border-white/10" style={{ transform: "rotateX(60deg) rotateY(45deg)" }} />
-      <div className="absolute inset-0 m-auto w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-full border border-dashed border-white/10" style={{ transform: "rotateX(60deg) rotateY(-45deg)" }} />
+      <div className="absolute inset-0 m-auto w-62.5 h-62.5 md:w-100 md:h-100 rounded-full border border-dashed border-white/10" style={{ transform: "rotateX(60deg)" }} />
+      <div className="absolute inset-0 m-auto w-50 h-50 md:w-75 md:h-75 rounded-full border border-dashed border-white/10" style={{ transform: "rotateX(60deg) rotateY(45deg)" }} />
+      <div className="absolute inset-0 m-auto w-70 h-70 md:w-112.5 md:h-112.5 rounded-full border border-dashed border-white/10" style={{ transform: "rotateX(60deg) rotateY(-45deg)" }} />
 
       {/* Center Core */}
       <div className="absolute inset-0 m-auto w-16 h-16 md:w-24 md:h-24 bg-background-primary rounded-full shadow-[0_0_50px_rgba(73,196,186,0.3)] border border-accent-primary/30 flex items-center justify-center z-10 backdrop-blur-md">
