@@ -18,8 +18,8 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "Cosmic Ocean | Premium Portfolio",
-  description: "A premium space-themed professional portfolio",
+  title: "Diana Desing",
+  description: "Professional portfolio",
 };
 
 export default function RootLayout({
