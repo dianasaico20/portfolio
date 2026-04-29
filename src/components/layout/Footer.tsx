@@ -15,10 +15,10 @@ export default function Footer() {
   return (
     <footer className="relative border-t border-border-muted bg-background-primary pt-16 pb-8 overflow-hidden">
       {/* Decorative gradient */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-accent-primary to-transparent opacity-50" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-accent-primary to-transparent opacity-50" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-24 bg-accent-primary/10 blur-[100px] pointer-events-none" />
 
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start gap-2">
           <Link href="/" className="flex items-center group">
             <Image
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-muted">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-muted">
         <p>© {currentYear} Diana Saico. Todos los derechos reservados.</p>
         <div className="flex gap-4">
           <Link href="/privacy" className="hover:text-text-primary transition-colors">Privacy Policy</Link>

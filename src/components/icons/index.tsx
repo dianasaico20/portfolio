@@ -13,7 +13,8 @@ export {
   Cpu,
   Terminal,
   ArrowRight,
-  ExternalLink
+  ExternalLink,
+  MapPin
 } from "lucide-react";
 
 import type { SVGProps } from "react";

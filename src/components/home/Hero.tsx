@@ -7,7 +7,7 @@ import HeroSphere from "./HeroSphere";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -60,7 +60,7 @@ export default function Hero() {
       </div>
 
       {/* Decorative gradient overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background-primary to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background-primary to-transparent pointer-events-none" />
     </section>
   );
 }

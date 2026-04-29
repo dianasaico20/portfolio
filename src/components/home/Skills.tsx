@@ -1,62 +1,49 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, MonitorSmartphone, Database, Blocks, Zap, Shield } from "@/components/icons";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card } from "@/components/ui/Card";
 
 const skills = [
   {
-    category: "Frontend Architecture",
-    icon: Layers,
-    items: ["React & Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    category: "Diseño y Prototipado",
+    items: [
+      "Figma · Adobe XD · Prototyping",
+      "User Research · Design Systems"
+    ]
   },
   {
-    category: "Backend & Systems",
-    icon: Database,
-    items: ["Node.js", "PostgreSQL", "GraphQL", "REST APIs"],
+    category: "Desarrollo Visual / No-Code",
+    items: [
+      "Framer · Webflow · WordPress",
+      "Webflow CMS · Animations"
+    ]
   },
   {
-    category: "UI/UX Design",
-    icon: MonitorSmartphone,
-    items: ["Figma", "Design Systems", "Accessibility", "Responsive Design"],
-  },
-  {
-    category: "DevOps & Cloud",
-    icon: Blocks,
-    items: ["Vercel", "AWS", "Docker", "CI/CD Pipelines"],
-  },
-  {
-    category: "Performance",
-    icon: Zap,
-    items: ["Core Web Vitals", "Lighthouse", "SEO", "Optimization"],
-  },
-  {
-    category: "Security & Testing",
-    icon: Shield,
-    items: ["Jest / Cypress", "OWASP", "Auth0 / NextAuth", "Data Privacy"],
-  },
+    category: "Tecnologías Front-end",
+    items: [
+      "Angular · Blazor",
+      "HTML · CSS · JavaScript"
+    ]
+  }
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative z-10 bg-background-secondary/20">
+    <section id="skills" className="py-24 relative z-10">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12 text-left"
         >
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primary mb-4">
-            Technical <span className="text-highlight-primary">Arsenal</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-text-primary">
+            Habilidades
           </h2>
-          <p className="text-text-muted max-w-2xl mx-auto text-lg">
-            A comprehensive toolkit designed to build robust, scalable, and visually stunning applications.
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {skills.map((skill, idx) => (
             <motion.div
               key={skill.category}
@@ -65,22 +52,23 @@ export default function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <Card className="h-full bg-background-primary/50 border-white/5 hover:border-highlight-primary/50 group">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 rounded-xl bg-highlight-soft flex items-center justify-center mb-6 text-highlight-primary group-hover:scale-110 transition-transform">
-                    <skill.icon size={24} />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-text-primary mb-4">
+              <Card className="h-full bg-background-tertiary border-transparent hover:border-accent-primary/30 group shadow-2xl transition-all duration-300">
+                <div className="p-8 md:p-10 flex flex-col h-full">
+                  <h3 className="font-display text-lg md:text-xl font-bold text-accent-primary mb-5 tracking-wide">
                     {skill.category}
                   </h3>
-                  <ul className="space-y-2">
-                    {skill.items.map(item => (
-                      <li key={item} className="text-text-muted flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-highlight-primary/50 before:rounded-full before:mr-3">
+                  
+                  {/* Subtle Divider */}
+                  <div className="w-[85%] h-[1px] bg-white/10 mb-8 transition-colors group-hover:bg-accent-primary/20" />
+                  
+                  <ul className="space-y-4 flex-1">
+                    {skill.items.map((item, itemIdx) => (
+                      <li key={itemIdx} className="text-text-primary text-sm font-body font-medium tracking-wide">
                         {item}
                       </li>
                     ))}
                   </ul>
-                </CardContent>
+                </div>
               </Card>
             </motion.div>
           ))}
