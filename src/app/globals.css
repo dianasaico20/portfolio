@@ -1,26 +1,99 @@
 @import "tailwindcss";
 
+@config "../../tailwind.config.ts";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* =========================
+     BLUES
+  ========================= */
+  --color-blue-950: #000206;
+  --color-blue-900: #0A0833;
+  --color-blue-800: #070543;
+  --color-blue-overlay: rgba(7, 5, 67, 0.62);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* =========================
+     WHITES
+  ========================= */
+  --color-white-900: #EFF8FE;
+  --color-white-muted: rgba(239, 248, 254, 0.30);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* =========================
+     TEALS
+  ========================= */
+  --color-teal-500: #49C4BA;
+  --color-teal-600: #3BA69D;
+  --color-teal-soft: rgba(73, 196, 186, 0.10);
+  --color-teal-muted: rgba(73, 196, 186, 0.30);
+
+  /* =========================
+     PINKS
+  ========================= */
+  --color-pink-500: #9B4B88;
+  --color-pink-soft: rgba(155, 75, 136, 0.15);
+  --color-pink-muted: rgba(155, 75, 136, 0.30);
+
+  /* =========================
+     REDS
+  ========================= */
+  --color-red-100: #E54D4D;
+  --color-red-900: #400D0D;
+
+  /* =========================
+     GRAYS
+  ========================= */
+  --color-gray-900: #808080;
+  --color-gray-muted: rgba(128, 128, 128, 0.40);
+
+  /* =========================
+     SEMANTIC: BACKGROUNDS
+  ========================= */
+  --background-primary: var(--color-blue-950);
+  --background-secondary: var(--color-blue-900);
+  --background-tertiary: var(--color-blue-800);
+  --background-overlay: var(--color-blue-overlay);
+
+  /* =========================
+     SEMANTIC: TEXT
+  ========================= */
+  --text-primary: var(--color-white-900);
+  --text-muted: var(--color-white-muted);
+  --text-subtle: var(--color-gray-900);
+
+  /* =========================
+     SEMANTIC: ACCENT
+  ========================= */
+  --accent-primary: var(--color-teal-500);
+  --accent-hover: var(--color-teal-600);
+  --accent-soft: var(--color-teal-soft);
+  --accent-muted: var(--color-teal-muted);
+
+  /* =========================
+     SEMANTIC: HIGHLIGHT
+  ========================= */
+  --highlight-primary: var(--color-pink-500);
+  --highlight-soft: var(--color-pink-soft);
+  --highlight-muted: var(--color-pink-muted);
+
+  /* =========================
+     SEMANTIC: FEEDBACK
+  ========================= */
+  --danger-primary: var(--color-red-100);
+  --danger-dark: var(--color-red-900);
+
+  /* =========================
+     SEMANTIC: BORDERS
+  ========================= */
+  --border-muted: var(--color-white-muted);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-family: var(--font-jakarta), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Base headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-rajdhani), sans-serif;
 }
