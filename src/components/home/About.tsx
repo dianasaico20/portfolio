@@ -99,6 +99,7 @@ export default function About() {
                   src="/assets/images/foto.png"
                   alt="Profile"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </motion.div>

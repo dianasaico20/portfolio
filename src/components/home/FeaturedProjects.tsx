@@ -63,7 +63,7 @@ const projects = [
 export default function FeaturedProjects() {
   const [activeFilter, setActiveFilter] = useState("Todos");
 
-  const filteredProjects = projects.filter(p => 
+  const filteredProjects = projects.filter(p =>
     activeFilter === "Todos" ? true : p.category === activeFilter
   );
 
@@ -80,18 +80,17 @@ export default function FeaturedProjects() {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-text-primary mb-6">
             Proyectos
           </h2>
-          
+
           {/* Filters */}
           <div className="flex flex-wrap items-center gap-3">
             {filters.map(filter => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2 rounded-full text-xs md:text-sm font-body transition-all duration-300 ${
-                  activeFilter === filter
-                    ? "bg-accent-primary text-background-primary font-bold"
-                    : "border border-accent-primary text-text-primary hover:bg-accent-soft font-medium"
-                }`}
+                className={`px-5 py-2 rounded-full text-xs md:text-sm font-body transition-all duration-300 ${activeFilter === filter
+                  ? "bg-accent-primary text-background-primary font-bold"
+                  : "border border-accent-primary text-text-primary hover:bg-accent-soft font-medium"
+                  }`}
               >
                 {filter}
               </button>
@@ -101,7 +100,7 @@ export default function FeaturedProjects() {
 
         <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <AnimatePresence>
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
@@ -117,6 +116,9 @@ export default function FeaturedProjects() {
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority={index < 2}
+                      quality={75}
                     />
                     <div className="absolute inset-0 bg-background-primary/10 group-hover:bg-transparent transition-colors duration-500" />
                   </div>
@@ -129,9 +131,9 @@ export default function FeaturedProjects() {
                     </p>
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tags.map(tag => (
-                        <Badge 
-                          key={tag.label} 
-                          variant={tag.variant as "default" | "highlight" | "outline"} 
+                        <Badge
+                          key={tag.label}
+                          variant={tag.variant as "default" | "highlight" | "outline"}
                           className="font-body text-xs rounded-full px-3 py-1 font-semibold tracking-wide"
                         >
                           {tag.label}
