@@ -3,31 +3,11 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 
-const skills = [
-  {
-    category: "Diseño y Prototipado",
-    items: [
-      "Figma · Adobe XD · Prototyping",
-      "User Research · Design Systems"
-    ]
-  },
-  {
-    category: "Desarrollo Visual / No-Code",
-    items: [
-      "Framer · Webflow · WordPress",
-      "Webflow CMS · Animations"
-    ]
-  },
-  {
-    category: "Tecnologías Front-end",
-    items: [
-      "Angular · Blazor",
-      "HTML · CSS · JavaScript"
-    ]
-  }
-];
+import { useSkills } from "@/hooks/useSkills";
 
 export default function Skills() {
+  const { skills } = useSkills();
+
   return (
     <section id="skills" className="py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">

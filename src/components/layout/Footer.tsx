@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Github, Linkedin, Twitter, Mail } from "@/components/icons";
-import Image from 'next/image';
+
 
 const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Proyectos", href: "#projects" },
-  { name: "Habilidades", href: "#skills" },
+  { name: "Habilidades", href: "#skSills" },
   { name: "Sobre mi", href: "#about" },
 ];
 

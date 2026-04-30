@@ -1,71 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-
-const filters = ["Todos", "Diseño UX/UI", "Diseño UI", "Desarrollo"];
-
-const projects = [
-  {
-    id: 1,
-    title: "Sistema de Ventas Vendly",
-    description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
-    tags: [
-      { label: "UX/UI", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
-    ],
-    category: "Diseño UX/UI"
-  },
-  {
-    id: 2,
-    title: "Sistema de Ventas Vendly",
-    description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
-    tags: [
-      { label: "UX/UI", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
-    ],
-    category: "Diseño UX/UI"
-  },
-  {
-    id: 3,
-    title: "Sistema de Ventas Vendly",
-    description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
-    tags: [
-      { label: "UX/UI", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
-    ],
-    category: "Diseño UX/UI"
-  },
-  {
-    id: 4,
-    title: "Sistema de Ventas Vendly",
-    description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
-    tags: [
-      { label: "UX/UI", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
-    ],
-    category: "Diseño UX/UI"
-  }
-];
+import { useFeaturedProjects } from "@/hooks/useFeaturedProjects";
 
 export default function FeaturedProjects() {
-  const [activeFilter, setActiveFilter] = useState("Todos");
-
-  const filteredProjects = projects.filter(p =>
-    activeFilter === "Todos" ? true : p.category === activeFilter
-  );
+  const { filters, activeFilter, setActiveFilter, filteredProjects } = useFeaturedProjects();
 
   return (
     <section id="projects" className="py-24 relative z-10">
@@ -117,7 +60,7 @@ export default function FeaturedProjects() {
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      priority={index < 2}
+                      priority
                       quality={75}
                     />
                     <div className="absolute inset-0 bg-background-primary/10 group-hover:bg-transparent transition-colors duration-500" />

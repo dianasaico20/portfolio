@@ -1,27 +1,13 @@
 "use client";
 
-import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
+import { motion, useMotionTemplate } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { Mail, MapPin, Linkedin, Github } from "@/components/icons";
+import { useContactCTA } from "@/hooks/useContactCTA";
 
 export default function ContactCTA() {
-  const mouseX1 = useMotionValue(0);
-  const mouseY1 = useMotionValue(0);
-  const mouseX2 = useMotionValue(0);
-  const mouseY2 = useMotionValue(0);
-
-  function handleMouseMove1({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX1.set(clientX - left);
-    mouseY1.set(clientY - top);
-  }
-
-  function handleMouseMove2({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX2.set(clientX - left);
-    mouseY2.set(clientY - top);
-  }
+  const { mouseX1, mouseY1, mouseX2, mouseY2, handleMouseMove1, handleMouseMove2 } = useContactCTA();
 
   return (
     <section id="contact" className="py-24 relative z-10">
@@ -122,7 +108,9 @@ export default function ContactCTA() {
                 src="/assets/images/fondoform.jpg"
                 alt="Contact Background"
                 fill
-                className="object-cover"
+                className="object-cover "
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
               {/* Dark Overlay */}
               <div className="absolute inset-0 bg-background-primary/60 backdrop-blur-sm" />
