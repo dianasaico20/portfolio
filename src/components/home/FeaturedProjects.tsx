@@ -43,7 +43,7 @@ export default function FeaturedProjects() {
 
         <motion.div layout className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <AnimatePresence>
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map(project => (
               <motion.div
                 key={project.id}
                 layout
@@ -53,7 +53,7 @@ export default function FeaturedProjects() {
                 transition={{ duration: 0.4 }}
               >
                 <Card className="h-full flex flex-col group">
-                  <div className="relative h-62.5 md:h-80 w-full overflow-hidden">
+                  <div className="relative h-64 md:h-80 w-full overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}

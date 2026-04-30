@@ -47,7 +47,7 @@ export default function StarryBackground() {
     <div className="fixed inset-0 -z-10 overflow-hidden bg-background-primary">
       <motion.div
         style={{ y }}
-        className="absolute inset-0 w-full h-[120%]"
+        className="absolute inset-0 w-full h-full"
       >
         {stars.map((star) => (
           <div

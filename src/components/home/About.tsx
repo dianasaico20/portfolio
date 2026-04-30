@@ -63,7 +63,7 @@ export default function About() {
             >
               {/* Glow effect */}
               <motion.div
-                className="absolute inset-0 bg-linear-to-tr from-accent-primary to-highlight-primary rounded-full opacity-15 blur-2xl transform scale-[1.02]"
+                className="absolute inset-0 bg-linear-to-tr from-accent-primary to-highlight-primary rounded-full opacity-15 blur-2xl transform scale-105"
                 style={{ translateZ: -30 }}
               />
 

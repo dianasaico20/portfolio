@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
-
 import { useSkills } from "@/hooks/useSkills";
 
 export default function Skills() {
@@ -37,10 +36,10 @@ export default function Skills() {
                   <h3 className="font-display text-lg md:text-xl font-bold text-accent-primary mb-5 tracking-wide">
                     {skill.category}
                   </h3>
-                  
+
                   {/* Subtle Divider */}
                   <div className="w-5/6 h-px bg-white/10 mb-8 transition-colors group-hover:bg-accent-primary/20" />
-                  
+
                   <ul className="space-y-4 flex-1">
                     {skill.items.map((item, itemIdx) => (
                       <li key={itemIdx} className="text-text-primary text-sm font-body font-medium tracking-wide">

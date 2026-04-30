@@ -12,7 +12,7 @@ export default function HeroSphere() {
       
       {/* Center Core */}
       <div className="absolute inset-0 m-auto w-12 h-12 md:w-16 md:h-16 rounded-full bg-[radial-gradient(circle_at_center,rgba(73,196,186,0.8)_0%,transparent_80%)] shadow-[0_0_40px_rgba(73,196,186,0.6)] border border-accent-primary/50 animate-pulse flex items-center justify-center z-10">
-         <div className="w-1/2 h-1/2 bg-white rounded-full blur-[4px] opacity-80" />
+         <div className="w-1/2 h-1/2 bg-white rounded-full blur-xs opacity-80" />
       </div>
 
       {/* Rotating Sphere Container */}
@@ -25,7 +25,7 @@ export default function HeroSphere() {
         {Array.from({ length: 6 }).map((_, i) => (
           <div 
             key={`long-${i}`}
-            className="absolute inset-0 m-auto w-[260px] h-[260px] md:w-[440px] md:h-[440px] rounded-full border-[1px] border-white/10"
+            className="absolute inset-0 m-auto w-[260px] h-[260px] md:w-[440px] md:h-[440px] rounded-full border border-white/10"
             style={{ transform: `rotateY(${i * 30}deg)` }}
           />
         ))}
@@ -60,44 +60,7 @@ export default function HeroSphere() {
           );
         })}
       </div>
-      
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes spin-slow {
-          from { transform: rotateY(0deg) rotateX(-15deg); }
-          to { transform: rotateY(360deg) rotateX(-15deg); }
-        }
-        @keyframes reverse-spin {
-          from { transform: rotateY(0deg); }
-          to { transform: rotateY(-360deg); }
-        }
-        @keyframes pulse-ring {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-        @keyframes core-float {
-          0%, 100% { transform: translateY(0px) rotateY(0deg) rotateX(0deg); }
-          33% { transform: translateY(-10px) rotateY(15deg) rotateX(5deg); }
-          66% { transform: translateY(10px) rotateY(-15deg) rotateX(-5deg); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 25s linear infinite;
-        }
-        .animate-reverse-spin {
-          animation: reverse-spin 25s linear infinite;
-        }
-        .animate-pulse-ring {
-          animation: pulse-ring 4s ease-in-out infinite;
-        }
-        .animate-core-float {
-          animation: core-float 10s ease-in-out infinite;
-        }
-        
-        @media (min-width: 768px) {
-          .orbit-item {
-            transform: rotateY(var(--angle)) translateZ(220px) rotateY(calc(var(--angle) * -1)) !important;
-          }
-        }
-      `}} />
+    
     </div>
   );
 }

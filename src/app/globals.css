@@ -97,3 +97,44 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-rajdhani), sans-serif;
 }
+
+
+@layer utilities {
+  /* === Animaciones 3D del HeroSphere === */
+  @keyframes spin-slow {
+    from { transform: rotateY(0deg) rotateX(-15deg); }
+    to { transform: rotateY(360deg) rotateX(-15deg); }
+  }
+  @keyframes reverse-spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+  }
+  @keyframes pulse-ring {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  @keyframes core-float {
+    0%, 100% { transform: translateY(0px) rotateY(0deg) rotateX(0deg); }
+    33% { transform: translateY(-10px) rotateY(15deg) rotateX(5deg); }
+    66% { transform: translateY(10px) rotateY(-15deg) rotateX(-5deg); }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 25s linear infinite;
+  }
+  .animate-reverse-spin {
+    animation: reverse-spin 25s linear infinite;
+  }
+  .animate-pulse-ring {
+    animation: pulse-ring 4s ease-in-out infinite;
+  }
+  .animate-core-float {
+    animation: core-float 10s ease-in-out infinite;
+  }
+  
+  @media (min-width: 768px) {
+    .orbit-item {
+      transform: rotateY(var(--angle)) translateZ(220px) rotateY(calc(var(--angle) * -1)) !important;
+    }
+  }
+}

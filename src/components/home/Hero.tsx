@@ -20,7 +20,7 @@ export default function Hero() {
           </span>
 
           {/* Main Headline */}
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-[1.05] text-text-primary tracking-tight mb-6">
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-tight text-text-primary tracking-tight mb-6">
             Diseñadora<br />
             UX/UI & Web
           </h1>

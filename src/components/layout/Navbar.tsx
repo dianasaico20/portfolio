@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
-
+import Image from "next/image";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
@@ -38,9 +38,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
-          <img
+          <Image
             src="/assets/logo/Logotipo.svg"
             alt="Cosmic Ocean Logo"
+            width={40}
+            height={40}
             className="w-10 h-10 group-hover:opacity-80 transition-opacity"
           />
         </Link>
