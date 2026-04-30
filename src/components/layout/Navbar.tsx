@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import Image from 'next/image';
+
 const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Proyectos", href: "#projects" },
@@ -30,13 +31,15 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background-primary/80 backdrop-blur-md border-b border-border-muted py-4" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? "bg-background-primary/80 backdrop-blur-md shadow-[0_1px_0_0_rgba(255,255,255,0.1),0_4px_20px_0_rgba(0,0,0,0.5)] py-4"
+          : "bg-transparent py-6"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
           <Image
-            src="./assets/logo/Logotipo.svg"
+            src="/assets/logo/Logotipo.svg"
             alt="Cosmic Ocean Logo"
             width={40}
             height={40}
