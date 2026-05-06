@@ -30,6 +30,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="h-full"
             >
               <Card className="h-full bg-background-tertiary border-transparent hover:border-accent-primary/30 group shadow-2xl transition-all duration-300">
                 <div className="p-8 md:p-10 flex flex-col h-full">
@@ -40,13 +41,23 @@ export default function Skills() {
                   {/* Subtle Divider */}
                   <div className="w-5/6 h-px bg-white/10 mb-8 transition-colors group-hover:bg-accent-primary/20" />
 
-                  <ul className="space-y-4 flex-1">
-                    {skill.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="text-text-primary text-sm font-body font-medium tracking-wide">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Layout de Pills para Habilidades */}
+                  <div className="flex flex-wrap gap-3 flex-1 content-start">
+                    {skill.items.map((item, itemIdx) => {
+                      const Icon = item.icon;
+                      return (
+                        <div
+                          key={itemIdx}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-background-secondary border border-white/5 text-text-muted transition-all duration-300 hover:scale-105 hover:text-accent-primary hover:border-accent-primary/50 cursor-default group/pill"
+                        >
+                          <Icon className="w-5 h-5 transition-transform duration-300 group-hover/pill:scale-110" />
+                          <span className="text-sm font-body font-medium tracking-wide">
+                            {item.name}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </Card>
             </motion.div>

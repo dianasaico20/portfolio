@@ -8,6 +8,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
   display: "swap",
+  preload: false,
 });
 
 const rajdhani = Rajdhani({
@@ -15,6 +16,7 @@ const rajdhani = Rajdhani({
   weight: ["600", "700"],
   variable: "--font-rajdhani",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
