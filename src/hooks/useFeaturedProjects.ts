@@ -22,7 +22,7 @@ export const projects = [
     caseStudyUrl: "/projects/vendly",
 
     prototypeUrl:
-      "https://www.figma.com/proto/vendly",
+      "https://www.figma.com/proto/Vyl9RwF8BdCPZjv34Kgcm7/Sistema-de-Ventas-Interno?node-id=525-1980&p=f&t=M5uCKFy8orMrkIHA-1&scaling=contain&content-scaling=responsive&page-id=525%3A1979&starting-point-node-id=525%3A1980",
 
     tags: [
       { label: "UX/UI", variant: "default" },
@@ -43,10 +43,10 @@ export const projects = [
 
     image: "/assets/images/casoux.png",
 
-    caseStudyUrl: "/projects/el-pastel",
+    caseStudyUrl: "https://www.figma.com/proto/xXA6BrVoajztFFt1bXX8N3/Landign-Page-%22El-Pastel-con-Sabor%22?node-id=636-364&p=f&t=8RYBT3uoxBbPepSj-1&scaling=scale-down&content-scaling=fixed&page-id=543%3A328",
 
     prototypeUrl:
-      "https://www.figma.com/proto/elpastel",
+      "https://www.figma.com/proto/xXA6BrVoajztFFt1bXX8N3/Landign-Page-%22El-Pastel-con-Sabor%22?node-id=111-692&p=f&t=UIv1OsiZh6XNPytM-1&scaling=contain&content-scaling=responsive&page-id=68%3A290&starting-point-node-id=111%3A692",
 
     tags: [
       { label: "UX/UI", variant: "default" },
@@ -70,7 +70,7 @@ export const projects = [
     caseStudyUrl: "/projects/cuenca-tour-360",
 
     prototypeUrl:
-      "https://www.figma.com/proto/cuencatour360",
+      "https://www.cuencatour360.com/",
 
     tags: [
       { label: "UX/UI", variant: "default" },
@@ -100,6 +100,30 @@ export const projects = [
       { label: "UI", variant: "default" },
       { label: "Figma", variant: "default" },
       { label: "App", variant: "highlight" }
+    ],
+
+    category: "Diseño UI"
+  },
+
+    {
+    id: 5,
+
+    title: "Banner Prototipo",
+
+    description:
+      "Banner para redes sociales",
+
+    image: "/assets/images/banner.png",
+
+    caseStudyUrl: "",
+
+    prototypeUrl:
+      "https://www.figma.com/proto/SmkYHkvA0Onh43N3JaMNdp/Prototipo-banner?node-id=24-28&p=f&t=PMbU9jjG5oNcsXMk-1&scaling=scale-down-width&content-scaling=fixed&page-id=24%3A26&starting-point-node-id=24%3A28",
+
+    tags: [
+      { label: "UI", variant: "default" },
+      { label: "Figma", variant: "default" },
+      { label: "Banner", variant: "highlight" }
     ],
 
     category: "Diseño UI"
