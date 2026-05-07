@@ -67,8 +67,7 @@ export default function Hero() {
       </div>
 
       {/* Decorative gradient overlay & Spatial Glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background-primary via-background-primary/80 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-24 bg-accent-primary/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-40px] left-1/2 -translate-x-1/2 w-[1200px] h-40 bg-background-primary/60 blur-[120px] rounded-full pointer-events-none" />      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-24 bg-accent-primary/10 blur-[80px] rounded-full pointer-events-none" />
     </section>
   );
 }

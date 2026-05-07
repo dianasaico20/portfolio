@@ -13,9 +13,8 @@ export default function About() {
       {/* Smooth vertical gradient background to avoid sharp cuts and reveal stars */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-background-primary/20 to-transparent pointer-events-none -z-10" />
 
-      {/* Top Section Divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-accent-primary/20 to-transparent" />
-      
+      {/* Bottom Section Divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[2px] bg-gradient-to-r from-transparent via-accent-primary/8 to-transparent blur-sm" />
       {/* Ambient Cosmic Illumination */}
       <div className="absolute top-1/2 -left-64 w-150 h-150 bg-accent-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -35,12 +34,12 @@ export default function About() {
             </h2>
 
             {/* Subtle Divider */}
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 256 }}
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="h-px bg-linear-to-r from-accent-primary/80 to-transparent mb-8" 
+              className="h-px bg-linear-to-r from-accent-primary/80 to-transparent mb-8"
             />
 
             <div className="group relative p-8 rounded-3xl bg-linear-to-br from-background-secondary/30 to-background-tertiary/10 border border-white/5 shadow-lg hover:border-accent-primary/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(73,196,186,0.1)] hover:-translate-y-1">
@@ -108,16 +107,16 @@ export default function About() {
               </motion.div>
 
               {/* Floating Badge 1 (Top Left) */}
-              <motion.div 
+              <motion.div
                 className="absolute top-12 -left-4 md:-left-8 bg-background-secondary/70 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full flex items-center gap-2 shadow-2xl transition-transform hover:scale-105 cursor-default"
                 style={{ translateZ: 50 }}
               >
                 <div className="w-2 h-2 rounded-full bg-accent-primary shadow-[0_0_8px_rgba(73,196,186,0.8)] animate-pulse" />
                 <span className="text-xs font-display font-bold text-text-primary tracking-widest uppercase">UX/UI Design</span>
               </motion.div>
-              
+
               {/* Floating Badge 2 (Bottom Right) */}
-              <motion.div 
+              <motion.div
                 className="absolute bottom-16 -right-2 md:-right-6 bg-background-secondary/70 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full flex items-center gap-2 shadow-2xl transition-transform hover:scale-105 cursor-default"
                 style={{ translateZ: 60 }}
               >
