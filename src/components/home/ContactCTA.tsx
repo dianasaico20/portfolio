@@ -1,22 +1,76 @@
 "use client";
 
 import { motion, useMotionTemplate } from "framer-motion";
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { Mail, MapPin, Linkedin, Github } from "@/components/icons";
 import { useContactCTA } from "@/hooks/useContactCTA";
 
 export default function ContactCTA() {
-  const { mouseX1, mouseY1, mouseX2, mouseY2, handleMouseMove1, handleMouseMove2 } = useContactCTA();
+  const {
+    mouseX1,
+    mouseY1,
+    mouseX2,
+    mouseY2,
+    handleMouseMove1,
+    handleMouseMove2,
+  } = useContactCTA();
+
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+     e.preventDefault();
+
+  const form = e.currentTarget;
+
+  setIsSubmitting(true);
+  setResult("Enviando...");
+
+  const formData = new FormData(form);
+    
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    
+    if (accessKey) {
+      formData.append("access_key", accessKey);
+    }
+
+    try {
+     
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+        if (data.success) {
+          setResult("¡Mensaje enviado con éxito!");
+
+          setTimeout(() => {
+            (e.target as HTMLFormElement).reset();
+            setResult("");
+          }, 3000);
+
+        } else {
+          setResult("Error al enviar. Inténtalo de nuevo.");
+        }
+    } catch (error) {
+      console.error(error);
+      setResult("Error de conexión.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 relative z-10 overflow-hidden">
-      {/* Smooth vertical gradient background to avoid sharp cuts and reveal stars */}
+      {/* Smooth vertical gradient background */}
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-background-secondary/10 to-transparent pointer-events-none -z-10" />
 
       {/* Top Section Divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-white/5 to-transparent" />
-      
+
       {/* Ambient Cosmic Illumination */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-highlight-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -34,7 +88,7 @@ export default function ContactCTA() {
           >
             {/* Interactive Border Glow */}
             <motion.div
-              className="pointer-events-none absolute -inset-px rounded-3xl  opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-20"
+              className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-20"
               style={{
                 background: useMotionTemplate`
                   radial-gradient(
@@ -43,7 +97,8 @@ export default function ContactCTA() {
                     transparent 80%
                   )
                 `,
-                WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                WebkitMask:
+                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                 WebkitMaskComposite: "xor",
                 maskComposite: "exclude",
                 padding: "1px",
@@ -55,13 +110,19 @@ export default function ContactCTA() {
                 Envíame un mensaje
               </h2>
 
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="space-y-2">
-                  <label className="text-sm font-body text-text-primary/80">Nombre</label>
+                  <label className="text-sm font-body text-text-primary/80">
+                    Nombre
+                  </label>
+
                   <div className="relative group/input">
                     <div className="absolute inset-0 bg-accent-primary/20 blur-md rounded-xl opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300" />
+
                     <input
                       type="text"
+                      name="name"
+                      required
                       placeholder="Nombre completo"
                       className="relative w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors shadow-inner"
                     />
@@ -69,11 +130,17 @@ export default function ContactCTA() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-body text-text-primary/80">Correo electrónico</label>
+                  <label className="text-sm font-body text-text-primary/80">
+                    Correo electrónico
+                  </label>
+
                   <div className="relative group/input">
                     <div className="absolute inset-0 bg-accent-primary/20 blur-md rounded-xl opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300" />
+
                     <input
                       type="email"
+                      name="email"
+                      required
                       placeholder="Correo"
                       className="relative w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors shadow-inner"
                     />
@@ -81,10 +148,16 @@ export default function ContactCTA() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-body text-text-primary/80">Mensaje</label>
+                  <label className="text-sm font-body text-text-primary/80">
+                    Mensaje
+                  </label>
+
                   <div className="relative group/input">
                     <div className="absolute inset-0 bg-accent-primary/20 blur-md rounded-xl opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300" />
+
                     <textarea
+                      name="message"
+                      required
                       placeholder="Cuéntame sobre tu proyecto"
                       rows={5}
                       className="relative w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors resize-none shadow-inner"
@@ -96,15 +169,37 @@ export default function ContactCTA() {
                   <input
                     type="checkbox"
                     id="terms"
+                    required
                     className="w-4 h-4 rounded border-white/10 bg-background-tertiary text-accent-primary focus:ring-accent-primary accent-accent-primary cursor-pointer"
                   />
-                  <label htmlFor="terms" className="text-xs md:text-sm font-body text-text-muted cursor-pointer">
+
+                  <label
+                    htmlFor="terms"
+                    className="text-xs md:text-sm font-body text-text-muted cursor-pointer"
+                  >
                     Acepto los términos y condiciones
                   </label>
                 </div>
 
-                <Button variant="primary" className="mt-6 rounded-xl font-body font-bold text-base px-10 h-12">
-                  Enviar
+                {result && (
+                  <p
+                    className={`text-sm font-medium ${
+                      result.includes("éxito")
+                        ? "text-[#49c4ba]"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {result}
+                  </p>
+                )}
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="primary"
+                  className="mt-6 rounded-xl font-body font-bold text-base px-10 h-12"
+                >
+                  {isSubmitting ? "Enviando..." : "Enviar"}
                 </Button>
               </form>
             </div>
@@ -119,22 +214,19 @@ export default function ContactCTA() {
             onMouseMove={handleMouseMove2}
             className="group relative rounded-3xl shadow-2xl"
           >
-            {/* Original Static Container (prevents overflow for the image but lets border glow spill nicely) */}
-            <div className="absolute inset-0 rounded-3xl  overflow-hidden border border-white/5">
-              {/* Background Image */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden border border-white/5">
               <Image
                 src="/assets/images/fondoform.jpg"
                 alt="Contact Background"
                 fill
-                className="object-cover "
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
-              {/* Dark Overlay */}
+
               <div className="absolute inset-0 bg-background-primary/60 backdrop-blur-sm" />
             </div>
 
-            {/* Interactive Border Glow */}
             <motion.div
               className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 z-20"
               style={{
@@ -145,7 +237,8 @@ export default function ContactCTA() {
                     transparent 80%
                   )
                 `,
-                WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                WebkitMask:
+                  "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                 WebkitMaskComposite: "xor",
                 maskComposite: "exclude",
                 padding: "1px",
@@ -160,12 +253,16 @@ export default function ContactCTA() {
               <div className="space-y-8 flex-1">
                 <div className="flex items-center gap-4 text-text-primary font-body">
                   <Mail className="w-6 h-6 text-text-primary" />
-                  <span className="text-lg">dianasaico2024@gmail.com</span>
+                  <span className="text-lg">
+                    dianasaico2024@gmail.com
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-4 text-text-primary font-body">
                   <MapPin className="w-6 h-6 text-text-primary" />
-                  <span className="text-lg">Ecuador / Remoto</span>
+                  <span className="text-lg">
+                    Ecuador / Remoto
+                  </span>
                 </div>
 
                 <p className="text-sm md:text-base text-text-muted mt-10 max-w-sm leading-relaxed font-body font-medium">
@@ -173,12 +270,22 @@ export default function ContactCTA() {
                 </p>
               </div>
 
-              {/* Social Icons */}
               <div className="flex items-center gap-4 mt-12">
-                <a href="https://www.linkedin.com/in/diana-s-a9060b264" className="w-14 h-14 rounded-full bg-background-tertiary flex items-center justify-center hover:bg-accent-primary transition-colors duration-300 group shadow-lg relative z-30">
+                <a
+                  href="https://www.linkedin.com/in/diana-s-a9060b264"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-14 h-14 rounded-full bg-background-tertiary flex items-center justify-center hover:bg-accent-primary transition-colors duration-300 group shadow-lg relative z-30"
+                >
                   <Linkedin className="w-6 h-6 text-text-primary group-hover:text-background-primary transition-colors" />
                 </a>
-                <a href="https://github.com/dianasaico20" className="w-14 h-14 rounded-full bg-background-tertiary flex items-center justify-center hover:bg-accent-primary transition-colors duration-300 group shadow-lg relative z-30">
+
+                <a
+                  href="https://github.com/dianasaico20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-14 h-14 rounded-full bg-background-tertiary flex items-center justify-center hover:bg-accent-primary transition-colors duration-300 group shadow-lg relative z-30"
+                >
                   <Github className="w-6 h-6 text-text-primary group-hover:text-background-primary transition-colors" />
                 </a>
               </div>
