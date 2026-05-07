@@ -58,7 +58,7 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button variant="primary" size="sm"  onClick={() => window.location.href = "mailto:dianasaico2024@gmail.com"}>
+          <Button variant="primary" size="sm" onClick={() => window.location.href = "mailto:dianasaico2024@gmail.com"}>
             Contacto
           </Button>
         </nav>
@@ -79,7 +79,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="absolute top-full left-0 right-0 bg-background-secondary border-b border-border-muted p-6 flex flex-col gap-4 shadow-xl md:hidden"
+          className="absolute top-full left-0 right-0 bg-background-secondary/80 backdrop-blur-2xl border-b border-white/10 p-6 flex flex-col gap-4 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] md:hidden"
         >
           {navLinks.map((link) => (
             <Link
@@ -91,13 +91,13 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-   <Button 
-  variant="primary" 
-  className="mt-4 w-full" 
-  onClick={() => window.location.href = "mailto:dianasaico2024@gmail.com"}
->
-  Contacto
-</Button>
+          <Button
+            variant="primary"
+            className="mt-4 w-full"
+            onClick={() => window.location.href = "mailto:dianasaico2024@gmail.com"}
+          >
+            Contacto
+          </Button>
         </motion.div>
       )}
     </motion.header>

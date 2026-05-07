@@ -20,7 +20,7 @@ const rajdhani = Rajdhani({
 });
 
 export const metadata: Metadata = {
-  title: "Diana Desing",
+  title: "Diana Design",
   description: "Professional portfolio",
 };
 
@@ -37,7 +37,6 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col relative">
         <SmoothScrollProvider>
           <StarryBackground />
-          {/* Capa 1 y 2 van dentro de las páginas y componentes específicos */}
           <main className="flex-1 flex flex-col relative z-10">
             {children}
           </main>

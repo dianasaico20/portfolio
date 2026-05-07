@@ -75,6 +75,19 @@ export default function ContactCTA() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-highlight-primary/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        {/* Main Section Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12 md:mb-16 text-center"
+        >
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary">
+            Trabajemos juntos
+          </h2>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
           {/* Left Form Column */}
