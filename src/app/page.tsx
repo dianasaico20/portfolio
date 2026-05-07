@@ -10,13 +10,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col gap-12 md:gap-24">
+      <main className="flex flex-col">
         <Hero />
         <FeaturedProjects />
         <Skills />
         <About />
         <ContactCTA />
-      </div>
+      </main>
       <Footer />
     </>
   );

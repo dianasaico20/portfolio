@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export const filters = ["Todos", "Diseño UX/UI", "Diseño UI", "Desarrollo"];
+export const filters = ["Todos", "Diseño UX/UI", "Diseño UI"];
 
 export const projects = [
   {
     id: 1,
     title: "Sistema de Ventas Vendly",
     description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
+    image: "/assets/images/sistemvendly.png",
     tags: [
       { label: "UX/UI", variant: "default" },
       { label: "Figma", variant: "default" },
@@ -17,27 +17,27 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Sistema de Ventas Vendly",
-    description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
+    title: "El Pastel",
+    description: "Landing Page para una panaderia y pasteleria local",
+    image: "/assets/images/casoux.png",
     tags: [
       { label: "UX/UI", variant: "default" },
       { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
+      { label: "Proyecto conceptual", variant: "highlight" }
     ],
     category: "Diseño UX/UI"
   },
   {
     id: 3,
-    title: "Sistema de Ventas Vendly",
-    description: "Solución integral para gestión de ventas B2B para tiendas de tecnología",
-    image: "/assets/images/placeholder-project.jpg",
+    title: "Cuenca Tour 360",
+    description: "Sitio web para una agencia de viajes local",
+    image: "/assets/images/cuencatour360.png",
     tags: [
-      { label: "UX/UI", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
+      { label: "UI", variant: "default" },
+      { label: "Odoo", variant: "default" },
+      { label: "Agencia de viajes", variant: "highlight" }
     ],
-    category: "Diseño UX/UI"
+    category: "Diseño UI"
   },
   {
     id: 4,

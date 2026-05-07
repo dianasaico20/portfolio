@@ -12,18 +12,25 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-start"
+          className="flex flex-col items-start relative"
         >
+          {/* Spatial Glow */}
+          <div className="absolute top-1/3 -left-20 w-72 h-72 bg-accent-primary/20 blur-[120px] rounded-full pointer-events-none z-[-1]" />
+          <div className="absolute bottom-10 right-10 w-64 h-64 bg-highlight-primary/15 blur-[100px] rounded-full pointer-events-none z-[-1]" />
+
           {/* Greeting */}
           <span className="font-body text-accent-primary font-semibold text-lg md:text-xl tracking-wide mb-4">
             Hola, soy Diana Saico
           </span>
 
           {/* Main Headline */}
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-tight text-text-primary tracking-tight mb-6">
-            Diseñadora<br />
-            UX/UI & Web
-          </h1>
+          <div className="relative mb-6">
+            <div className="absolute -inset-4 bg-accent-primary/20 blur-[80px] rounded-full opacity-50 animate-pulse pointer-events-none" />
+            <h1 className="relative font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent-primary to-highlight-primary animate-text-gradient">
+              Diseñadora<br />
+              UX/UI & Web
+            </h1>
+          </div>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-text-muted max-w-lg leading-relaxed mb-10 font-body font-medium">
@@ -59,8 +66,9 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Decorative gradient overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background-primary to-transparent pointer-events-none" />
+      {/* Decorative gradient overlay & Spatial Glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background-primary via-background-primary/80 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-24 bg-accent-primary/10 blur-[80px] rounded-full pointer-events-none" />
     </section>
   );
 }

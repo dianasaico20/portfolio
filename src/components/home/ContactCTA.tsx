@@ -10,8 +10,17 @@ export default function ContactCTA() {
   const { mouseX1, mouseY1, mouseX2, mouseY2, handleMouseMove1, handleMouseMove2 } = useContactCTA();
 
   return (
-    <section id="contact" className="py-24 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="contact" className="py-24 relative z-10 overflow-hidden">
+      {/* Smooth vertical gradient background to avoid sharp cuts and reveal stars */}
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-background-secondary/10 to-transparent pointer-events-none -z-10" />
+
+      {/* Top Section Divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-white/5 to-transparent" />
+      
+      {/* Ambient Cosmic Illumination */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-100 bg-highlight-primary/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
           {/* Left Form Column */}
@@ -49,29 +58,38 @@ export default function ContactCTA() {
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div className="space-y-2">
                   <label className="text-sm font-body text-text-primary/80">Nombre</label>
-                  <input
-                    type="text"
-                    placeholder="Nombre completo"
-                    className="w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors shadow-inner"
-                  />
+                  <div className="relative group/input">
+                    <div className="absolute inset-0 bg-accent-primary/20 blur-md rounded-xl opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300" />
+                    <input
+                      type="text"
+                      placeholder="Nombre completo"
+                      className="relative w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors shadow-inner"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-body text-text-primary/80">Correo electrónico</label>
-                  <input
-                    type="email"
-                    placeholder="Correo"
-                    className="w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors shadow-inner"
-                  />
+                  <div className="relative group/input">
+                    <div className="absolute inset-0 bg-accent-primary/20 blur-md rounded-xl opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300" />
+                    <input
+                      type="email"
+                      placeholder="Correo"
+                      className="relative w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors shadow-inner"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-body text-text-primary/80">Mensaje</label>
-                  <textarea
-                    placeholder="Cuéntame sobre tu proyecto"
-                    rows={5}
-                    className="w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors resize-none shadow-inner"
-                  />
+                  <div className="relative group/input">
+                    <div className="absolute inset-0 bg-accent-primary/20 blur-md rounded-xl opacity-0 group-focus-within/input:opacity-100 transition-opacity duration-300" />
+                    <textarea
+                      placeholder="Cuéntame sobre tu proyecto"
+                      rows={5}
+                      className="relative w-full bg-background-tertiary border border-white/5 rounded-xl px-5 py-3.5 text-sm font-body text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent-primary transition-colors resize-none shadow-inner"
+                    />
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-3 pt-2">

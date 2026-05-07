@@ -11,8 +11,18 @@ export default function FeaturedProjects() {
   const { filters, activeFilter, setActiveFilter, filteredProjects } = useFeaturedProjects();
 
   return (
-    <section id="projects" className="py-24 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="projects" className="py-24 relative z-10 overflow-hidden">
+      {/* Smooth vertical gradient background to avoid sharp cuts and reveal stars */}
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-background-primary/20 to-transparent pointer-events-none -z-10" />
+      
+      {/* Top Section Divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-linear-to-r from-transparent via-accent-primary/20 to-transparent" />
+      
+      {/* Ambient Cosmic Illumination */}
+      <div className="absolute top-1/4 -right-64 w-150 h-150 bg-accent-primary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-64 w-150 h-150 bg-highlight-primary/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,10 +73,14 @@ export default function FeaturedProjects() {
                       priority
                       quality={75}
                     />
-                    <div className="absolute inset-0 bg-background-primary/10 group-hover:bg-transparent transition-colors duration-500" />
+                    <div className="absolute inset-0 bg-background-primary/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                    {/* Hover light line glow at bottom of image */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-linear-to-t from-background-secondary via-background-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-20 pointer-events-none" />
                   </div>
-                  <CardContent className="p-8 flex flex-col flex-1">
-                    <h3 className="font-display text-xl md:text-2xl font-bold text-text-primary mb-3">
+                  <CardContent className="p-8 flex flex-col flex-1 relative overflow-hidden">
+                    {/* Background glow on card content on hover */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-32 bg-accent-primary/5 blur-[60px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    <h3 className="font-display text-xl md:text-2xl font-bold text-text-primary mb-3 relative z-10 group-hover:text-accent-primary transition-colors duration-300">
                       {project.title}
                     </h3>
                     <p className="text-text-muted text-sm md:text-base mb-6 leading-relaxed font-body">
@@ -84,7 +98,7 @@ export default function FeaturedProjects() {
                       ))}
                     </div>
 
-                    <div className="mt-auto border-t border-white/5 pt-8 flex flex-wrap gap-4">
+                    <div className="mt-auto relative z-10 border-t border-white/5 pt-8 flex flex-wrap gap-4 before:absolute before:top-0 before:left-0 before:w-0 before:h-px before:bg-linear-to-r before:from-accent-primary before:to-transparent group-hover:before:w-full before:transition-all before:duration-700">
                       <Button variant="primary" size="md" className="rounded-xl font-body font-bold text-sm w-full sm:w-auto px-8">
                         Ver caso
                       </Button>
