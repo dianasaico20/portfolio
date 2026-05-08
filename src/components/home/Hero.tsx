@@ -26,7 +26,7 @@ export default function Hero() {
           {/* Main Headline */}
           <div className="relative mb-6">
             <div className="absolute -inset-4 bg-accent-primary/20 blur-[80px] rounded-full opacity-50 animate-pulse pointer-events-none" />
-            <h1 className="relative font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-accent-primary to-highlight-primary animate-text-gradient">
+            <h1 className="relative font-display text-6xl sm:text-7xl md:text-8xl font-bold leading-tight tracking-tight text-transparent bg-clip-text bg-linear-to-r from-text-primary via-accent-primary to-highlight-primary animate-text-gradient">
               Diseñadora<br />
               UX/UI & Web
             </h1>
@@ -40,10 +40,14 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4 mb-16">
-            <Button variant="primary" size="lg" className="font-body font-bold tracking-wide rounded-2xl">
+            <Button variant="primary" size="lg" className="font-body font-bold tracking-wide rounded-2xl"
+            onClick={() => {
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            >
               Ver Proyectos
             </Button>
-            <Button variant="outline" size="lg" className="font-body font-bold tracking-wide rounded-2xl">
+            <Button variant="outline" size="lg" className="font-body font-bold tracking-wide rounded-2xl" onClick={() => window.location.href = "mailto:dianasaico2024@gmail.com"}>
               Contactar
             </Button>
           </div>
@@ -67,7 +71,7 @@ export default function Hero() {
       </div>
 
       {/* Decorative gradient overlay & Spatial Glow */}
-      <div className="absolute bottom-[-40px] left-1/2 -translate-x-1/2 w-[1200px] h-40 bg-background-primary/60 blur-[120px] rounded-full pointer-events-none" />      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-24 bg-accent-primary/10 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-300 h-40 bg-background-primary/60 blur-[120px] rounded-full pointer-events-none" />      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-200 h-24 bg-accent-primary/10 blur-[80px] rounded-full pointer-events-none" />
     </section>
   );
 }
