@@ -57,8 +57,55 @@ export const projects = [
     category: "Diseño UX/UI"
   },
 
-  {
+ {
     id: 3,
+
+    title: "Página de aterrizaje para ingeniería técnica",
+
+    description:
+      "Landing Page para propuesta de concepto de interfaz de usuario ",
+
+    image: "/assets/images/systronic.png",
+
+    caseStudyUrl: "",
+
+    prototypeUrl:
+      "https://www.figma.com/proto/dh6w3F2oPluWOZUlmSpssh/Systronic?node-id=1-669&t=KQgZyv3UEE59FJfv-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A668",
+
+    tags: [
+      { label: "UI", variant: "default" },
+      { label: "Figma", variant: "default" },
+      { label: "Proyecto conceptual", variant: "highlight" }
+    ],
+
+    category: "Diseño UI"
+  },
+
+{
+    id: 4,
+
+    title: "Portafolio personal de UI/UX",
+
+    description:
+      "Sitio web de portafolio personal con una cautivadora temática espacial",
+
+    image: "/assets/images/portafolio.png",
+
+    caseStudyUrl: "",
+
+    prototypeUrl:
+      "https://www.figma.com/proto/VWJ3dEe0h1HxGWl12VBYn0/Portafolio-test?node-id=72-773&t=lITiDKDef5mcBKE2-1&scaling=min-zoom&content-scaling=fixed&page-id=72%3A772",
+
+    tags: [
+      { label: "UI", variant: "default" },
+      { label: "Figma", variant: "default" },
+      { label: "Next.js", variant: "highlight" }
+    ],
+
+    category: "Diseño UI"
+  },
+  {
+    id: 5,
 
     title: "Cuenca Tour 360",
 
@@ -82,7 +129,7 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 6,
 
     title: "Food Fast App",
 
@@ -106,7 +153,7 @@ export const projects = [
   },
 
     {
-    id: 5,
+    id: 7,
 
     title: "Banner Prototipo",
 
