@@ -136,7 +136,7 @@ export const projects = [
     description:
       "Prototipo de una aplicación de comida rápida",
 
-    image: "/assets/images/appfood.png",
+    image: "/assets/images/appfastfood.png",
 
     caseStudyUrl: "",
 
@@ -160,7 +160,7 @@ export const projects = [
     description:
       "Banner para redes sociales",
 
-    image: "/assets/images/banner.png",
+    image: "/assets/images/bannermockup.png",
 
     caseStudyUrl: "",
 
