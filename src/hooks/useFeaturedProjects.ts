@@ -180,7 +180,7 @@ export const projects = [
     {
     id: 8,
 
-    title: "Tienda de Electodomesticos",
+    title: "ElectroClick",
 
     description:
       "Tienda de venta de electrodomésticos",
@@ -193,7 +193,7 @@ export const projects = [
       "https://tiendaelectroclick.freedev.app/?i=1",
 
     tags: [
-      { label: "UI", variant: "default" },
+      { label: "WordPress", variant: "default" },
       { label: "Figma", variant: "default" },
       { label: "Tienda online", variant: "highlight" }
     ],
