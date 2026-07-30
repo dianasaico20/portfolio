@@ -5,7 +5,8 @@ import { useState } from "react";
 export const filters = [
   "Todos",
   "Diseño UX/UI",
-  "Diseño UI"
+  "Diseño UI",
+  "Desarrollo"
 ];
 
 export const projects = [
@@ -174,6 +175,30 @@ export const projects = [
     ],
 
     category: "Diseño UI"
+  },
+  
+    {
+    id: 8,
+
+    title: "Tienda de Electodomesticos",
+
+    description:
+      "Tienda de venta de electrodomésticos",
+
+    image: "/assets/images/tiendaelectroclick.png",
+
+    caseStudyUrl: "",
+
+    prototypeUrl:
+      "https://tiendaelectroclick.freedev.app/?i=1",
+
+    tags: [
+      { label: "UI", variant: "default" },
+      { label: "Figma", variant: "default" },
+      { label: "Tienda online", variant: "highlight" }
+    ],
+
+    category: "Desarrollo"
   }
 ];
 
