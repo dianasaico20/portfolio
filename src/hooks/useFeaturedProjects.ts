@@ -15,7 +15,7 @@ export const projects = [
 
     image: "/assets/images/sistemvendly.png",
 
-    caseStudyUrl: "/projects/vendly",
+    caseStudyUrl: "",
 
     prototypeUrl:
       "https://www.figma.com/proto/Vyl9RwF8BdCPZjv34Kgcm7/Sistema-de-Ventas-Interno?node-id=525-1980&p=f&t=M5uCKFy8orMrkIHA-1&scaling=contain&content-scaling=responsive&page-id=525%3A1979&starting-point-node-id=525%3A1980",
@@ -34,11 +34,11 @@ export const projects = [
 
     title: "ElectroClick",
 
-    description: "Tienda de venta de electrodomésticos",
+    description: "Personalización y desarrollo de una tienda e-commerce en WordPress, aplicando principios de UX/UI para mejorar la navegación y la identidad visual.",
 
     image: "/assets/images/tiendaelectroclick.png",
 
-    caseStudyUrl: "",
+    caseStudyUrl: "https://www.figma.com/proto/X1k51vCsxAzUgZxbcwrY8Y/Caso-de-estudio---ElectroClick?node-id=9-2&viewport=374%2C244%2C0.61&t=JchgzImAUSzG0TYg-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
 
     prototypeUrl: "https://tiendaelectroclick.freedev.app/?i=1",
 
@@ -106,7 +106,7 @@ export const projects = [
 
     image: "/assets/images/cuencatour360.png",
 
-    caseStudyUrl: "/projects/cuenca-tour-360",
+    caseStudyUrl: "",
 
     prototypeUrl: "https://www.cuencatour360.com/",
 
