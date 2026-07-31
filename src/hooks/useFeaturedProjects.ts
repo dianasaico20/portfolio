@@ -2,12 +2,7 @@
 
 import { useState } from "react";
 
-export const filters = [
-  "Todos",
-  "Diseño UX/UI",
-  "Diseño UI",
-  "Desarrollo"
-];
+export const filters = ["Todos", "Diseño UX/UI", "Diseño UI", "Desarrollo"];
 
 export const projects = [
   {
@@ -28,23 +23,68 @@ export const projects = [
     tags: [
       { label: "UX/UI", variant: "default" },
       { label: "Figma", variant: "default" },
-      { label: "B2B", variant: "highlight" }
+      { label: "B2B", variant: "highlight" },
     ],
 
-    category: "Diseño UX/UI"
+    category: "Diseño UX/UI",
   },
 
   {
     id: 2,
 
-    title: "El Pastel",
+    title: "ElectroClick",
+
+    description: "Tienda de venta de electrodomésticos",
+
+    image: "/assets/images/tiendaelectroclick.png",
+
+    caseStudyUrl: "",
+
+    prototypeUrl: "https://tiendaelectroclick.freedev.app/?i=1",
+
+    tags: [
+      { label: "WordPress", variant: "default" },
+      { label: "Figma", variant: "default" },
+      { label: "Tienda online", variant: "highlight" },
+    ],
+
+    category: "Desarrollo",
+  },
+
+  {
+    id: 3,
+
+    title: "El Asedio del Reino de Aurum",
 
     description:
-      "Landing Page para una panadería y pastelería local",
+      "Juego narrativo desarrollado desde cero con HTML, CSS y JavaScript, enfocado en crear una experiencia interactiva mediante acertijos y storytelling.",
+
+    image: "/assets/images/juegomockup.png",
+
+    caseStudyUrl: "",
+
+    prototypeUrl: "https://the-treasure-of-aurum.vercel.app/",
+
+    tags: [
+      { label: "UX/UI", variant: "default" },
+      { label: "Frontend", variant: "default" },
+      { label: "Narrativa", variant: "highlight" },
+    ],
+
+    category: "Desarrollo",
+  },
+
+  {
+    id: 4,
+
+    title: "El Pastel",
+
+    description: "Landing Page para una panadería y pastelería local",
 
     image: "/assets/images/casoux.png",
 
-    caseStudyUrl: "https://www.figma.com/proto/xXA6BrVoajztFFt1bXX8N3/Landign-Page-%22El-Pastel-con-Sabor%22?node-id=636-364&p=f&t=8RYBT3uoxBbPepSj-1&scaling=scale-down&content-scaling=fixed&page-id=543%3A328",
+    caseStudyUrl:
+      "https://www.figma.com/proto/xXA6BrVoajztFFt1bXX8N3/Landign-Page-%22El-Pastel-con-Sabor%22?node-id=636-364&p=f&t=8RYBT3uoxBbPepSj-1&scaling=scale-down&content-scaling=fixed&page-id=543%3A328",
 
     prototypeUrl:
       "https://www.figma.com/proto/xXA6BrVoajztFFt1bXX8N3/Landign-Page-%22El-Pastel-con-Sabor%22?node-id=111-692&p=f&t=UIv1OsiZh6XNPytM-1&scaling=contain&content-scaling=responsive&page-id=68%3A290&starting-point-node-id=111%3A692",
@@ -52,38 +92,35 @@ export const projects = [
     tags: [
       { label: "UX/UI", variant: "default" },
       { label: "Figma", variant: "default" },
-      { label: "Proyecto conceptual", variant: "highlight" }
+      { label: "Proyecto conceptual", variant: "highlight" },
     ],
 
-    category: "Diseño UX/UI"
+    category: "Diseño UX/UI",
   },
+  {
+    id: 5,
 
- {
-    id: 3,
+    title: "Cuenca Tour 360",
 
-    title: "Página de aterrizaje para ingeniería técnica",
+    description: "Sitio web para una agencia de viajes local",
 
-    description:
-      "Landing Page para propuesta de concepto de interfaz de usuario ",
+    image: "/assets/images/cuencatour360.png",
 
-    image: "/assets/images/systronic.png",
+    caseStudyUrl: "/projects/cuenca-tour-360",
 
-    caseStudyUrl: "",
-
-    prototypeUrl:
-      "https://www.figma.com/proto/dh6w3F2oPluWOZUlmSpssh/Systronic?node-id=1-669&t=KQgZyv3UEE59FJfv-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A668",
+    prototypeUrl: "https://www.cuencatour360.com/",
 
     tags: [
-      { label: "UI", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "Proyecto conceptual", variant: "highlight" }
+      { label: "UX/UI", variant: "default" },
+      { label: "Odoo", variant: "default" },
+      { label: "Agencia de viajes", variant: "highlight" },
     ],
 
-    category: "Diseño UI"
+    category: "Desarrollo",
   },
 
-{
-    id: 4,
+  {
+    id: 6,
 
     title: "Portafolio personal de UI/UX",
 
@@ -100,42 +137,41 @@ export const projects = [
     tags: [
       { label: "UI", variant: "default" },
       { label: "Figma", variant: "default" },
-      { label: "Next.js", variant: "highlight" }
+      { label: "Next.js", variant: "highlight" },
     ],
 
-    category: "Diseño UI"
+    category: "Diseño UI",
   },
   {
-    id: 5,
+    id: 7,
 
-    title: "Cuenca Tour 360",
+    title: "Página de aterrizaje para ingeniería técnica",
 
     description:
-      "Sitio web para una agencia de viajes local",
+      "Landing Page para propuesta de concepto de interfaz de usuario ",
 
-    image: "/assets/images/cuencatour360.png",
+    image: "/assets/images/systronic.png",
 
-    caseStudyUrl: "/projects/cuenca-tour-360",
+    caseStudyUrl: "",
 
     prototypeUrl:
-      "https://www.cuencatour360.com/",
+      "https://www.figma.com/proto/dh6w3F2oPluWOZUlmSpssh/Systronic?node-id=1-669&t=KQgZyv3UEE59FJfv-1&scaling=min-zoom&content-scaling=fixed&page-id=1%3A668",
 
     tags: [
-      { label: "UX/UI", variant: "default" },
-      { label: "Odoo", variant: "default" },
-      { label: "Agencia de viajes", variant: "highlight" }
+      { label: "UI", variant: "default" },
+      { label: "Figma", variant: "default" },
+      { label: "Proyecto conceptual", variant: "highlight" },
     ],
 
-    category: "Diseño UI"
+    category: "Diseño UI",
   },
 
   {
-    id: 6,
+    id: 8,
 
     title: "Food Fast App",
 
-    description:
-      "Prototipo de una aplicación de comida rápida",
+    description: "Prototipo de una aplicación de comida rápida",
 
     image: "/assets/images/appfastfood.png",
 
@@ -147,19 +183,18 @@ export const projects = [
     tags: [
       { label: "UI", variant: "default" },
       { label: "Figma", variant: "default" },
-      { label: "App", variant: "highlight" }
+      { label: "App", variant: "highlight" },
     ],
 
-    category: "Diseño UI"
+    category: "Diseño UI",
   },
 
-    {
-    id: 7,
+  {
+    id: 9,
 
     title: "Banner Prototipo",
 
-    description:
-      "Banner para redes sociales",
+    description: "Banner para redes sociales",
 
     image: "/assets/images/bannermockup.png",
 
@@ -171,51 +206,24 @@ export const projects = [
     tags: [
       { label: "UI", variant: "default" },
       { label: "Figma", variant: "default" },
-      { label: "Banner", variant: "highlight" }
+      { label: "Banner", variant: "highlight" },
     ],
 
-    category: "Diseño UI"
+    category: "Diseño UI",
   },
-  
-    {
-    id: 8,
-
-    title: "ElectroClick",
-
-    description:
-      "Tienda de venta de electrodomésticos",
-
-    image: "/assets/images/tiendaelectroclick.png",
-
-    caseStudyUrl: "",
-
-    prototypeUrl:
-      "https://tiendaelectroclick.freedev.app/?i=1",
-
-    tags: [
-      { label: "WordPress", variant: "default" },
-      { label: "Figma", variant: "default" },
-      { label: "Tienda online", variant: "highlight" }
-    ],
-
-    category: "Desarrollo"
-  }
 ];
 
 export function useFeaturedProjects() {
-  const [activeFilter, setActiveFilter] =
-    useState("Todos");
+  const [activeFilter, setActiveFilter] = useState("Todos");
 
   const filteredProjects = projects.filter((project) =>
-    activeFilter === "Todos"
-      ? true
-      : project.category === activeFilter
+    activeFilter === "Todos" ? true : project.category === activeFilter,
   );
 
   return {
     filters,
     activeFilter,
     setActiveFilter,
-    filteredProjects
+    filteredProjects,
   };
 }
